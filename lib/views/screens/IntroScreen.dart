@@ -24,7 +24,7 @@ class Intro extends StatelessWidget {
                 child: Text("👋", style: TextStyle(fontSize: 100.0)),
               ),
               decoration: const PageDecoration(
-                titleTextStyle: TextStyle(color: Colors.orange),
+                titleTextStyle: TextStyle(color: Colors.black),
                 bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
               ),
             ),
