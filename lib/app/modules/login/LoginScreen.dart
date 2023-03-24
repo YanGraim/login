@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+import 'package:get/get.dart';
 
-  @override
-  State<Login> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<Login> {
+class LoginScreen extends GetView<LoginController> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();

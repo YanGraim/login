@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-// ignore_for_file: prefer_const_constructors
 import 'package:introduction_screen/introduction_screen.dart';
 
-import 'package:login/views/screens/LoginScreen.dart';
+import 'package:login/app/modules/login/LoginScreen.dart';
 
 class Intro extends StatelessWidget {
   const Intro({super.key});
@@ -15,7 +14,7 @@ class Intro extends StatelessWidget {
       child: Scaffold(
         body: IntroductionScreen(
           globalBackgroundColor: Colors.white,
-          scrollPhysics: BouncingScrollPhysics(),
+          scrollPhysics: const BouncingScrollPhysics(),
           pages: [
             PageViewModel(
               title: "Title of orange text and bold page",
@@ -30,9 +29,9 @@ class Intro extends StatelessWidget {
             ),
             PageViewModel(
               title: "Title of custom body page",
-              bodyWidget: Row(
+              bodyWidget: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text("Click on "),
                   Icon(Icons.edit),
                   Text(" to edit a post"),
@@ -41,7 +40,7 @@ class Intro extends StatelessWidget {
               image: const Center(child: Icon(Icons.android)),
             ),
             PageViewModel(
-              titleWidget: Text(
+              titleWidget: const Text(
                 "TWINS WMS",
                 style: TextStyle(
                   fontSize: 30,
@@ -57,13 +56,13 @@ class Intro extends StatelessWidget {
             ),
           ],
           onDone: () {
-            Get.to(Login());
+            Get.to(const Login());
           },
           onSkip: () {
-            Get.to(Login());
+            Get.to(const Login());
           },
           showSkipButton: true,
-          skip: Text(
+          skip: const Text(
             "Pular",
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -71,11 +70,11 @@ class Intro extends StatelessWidget {
               color: Colors.blue,
             ),
           ),
-          next: Icon(
+          next: const Icon(
             Icons.arrow_forward,
             color: Colors.blue,
           ),
-          done: Text(
+          done: const Text(
             "Pronto",
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -84,11 +83,11 @@ class Intro extends StatelessWidget {
             ),
           ),
           dotsDecorator: DotsDecorator(
-            size: Size.square(10),
-            activeSize: Size(20.0, 10.0),
+            size: const Size.square(10),
+            activeSize: const Size(20.0, 10.0),
             color: Colors.black,
             activeColor: Colors.blue,
-            spacing: EdgeInsets.symmetric(horizontal: 3.0),
+            spacing: const EdgeInsets.symmetric(horizontal: 3.0),
             activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
           ),
         ),

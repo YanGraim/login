@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'package:login/views/screens/IntroScreen.dart';
+import 'package:login/app/modules/intro/IntroScreen.dart';
 
 final sp = GetStorage();
 void main() async {
