@@ -2,61 +2,77 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../components/textfield.dart';
 import 'login_controller.dart';
 
 class LoginPage extends GetView<LoginController> {
-  final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
-  final _senhaController = TextEditingController();
-
   LoginPage({super.key});
+
+  //text editing controllers
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-            padding: const EdgeInsets.all(20),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: TextFormField(
-                      controller: _emailController,
-                      decoration: const InputDecoration(label: Text("E-mail"), hintText: "exemplo@email.com", border: OutlineInputBorder()),
-                      validator: (email) {
-                        if (email == null || email.isEmpty) {
-                          return "Digite seu e-mail";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: TextFormField(
-                      controller: _senhaController,
-                      decoration: const InputDecoration(label: Text("Senha"), hintText: "Digite sua senha", border: OutlineInputBorder()),
-                      validator: (senha) {
-                        if (senha == null || senha.isEmpty) {
-                          return "Digite sua senha";
-                        } else if (senha.length < 6) {
-                          return "Digite uma senha mais forte";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  Center(
-                    child: ElevatedButton(onPressed: () {}, child: const Text("Entrar")),
-                  )
-                ],
+      backgroundColor: Colors.grey[300],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 50,
               ),
-            )),
+
+              // LOGO
+              const Icon(
+                Icons.lock,
+                size: 100,
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+
+              // WELCOME BACK
+              Text(
+                'Bem-vindo a Leal Sistemas!',
+                style: TextStyle(color: Colors.grey[700], fontSize: 16),
+              ),
+
+              const SizedBox(
+                height: 25,
+              ),
+
+              //USERNAME
+              MyText(
+                controller: usernameController,
+                hintText: 'Username',
+                obscureText: false,
+              ),
+
+              const SizedBox(
+                height: 25,
+              ),
+              //PASSWORD
+              MyText(
+                controller: passwordController,
+                hintText: 'Password',
+                obscureText: true,
+              ),
+
+              const SizedBox(
+                height: 25,
+              ),
+              //FORGOT YOUR PASSWORD?
+              Text('Forgot password?',
+              style: TextStyle(color: Colors.grey[600]),)
+              
+              //SIGN IN BUTTON
+
+              // NOT A MEMBER? REGISTER NOW
+            ],
+          ),
+        ),
       ),
     );
   }

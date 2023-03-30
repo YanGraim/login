@@ -14,7 +14,10 @@ class AppPages {
   static get initial => Routes.intro;
 
   static final routes = [
-    GetPage(name: Routes.intro, page: () => const IntroPage(), binding: IntroBinding()),
+    GetPage(
+        name: Routes.intro,
+        page: () => const IntroPage(),
+        binding: IntroBinding()),
     GetPage(
       name: Routes.login,
       page: () => LoginPage(),

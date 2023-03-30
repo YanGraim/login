@@ -12,10 +12,12 @@ void main() async {
   box.remove("is_intro");
   bool sp = box.read("is_intro") ?? false;
   if (sp) {
-    runApp(GetMaterialApp(debugShowCheckedModeBanner: false, home: LoginPage()));
+    runApp(
+        GetMaterialApp(debugShowCheckedModeBanner: false, home: LoginPage()));
   } else {
     box.write("is_intro", true);
-    runApp(const GetMaterialApp(debugShowCheckedModeBanner: false, home: IntroPage()));
+    runApp(const GetMaterialApp(
+        debugShowCheckedModeBanner: false, home: IntroPage()));
   }
 }
 

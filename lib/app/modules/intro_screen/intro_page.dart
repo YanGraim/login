@@ -19,7 +19,8 @@ class IntroPage extends StatelessWidget {
           pages: [
             PageViewModel(
               title: "Title of blue page",
-              body: "Welcome to the app! This is a description on a page with a blue background.",
+              body:
+                  "Welcome to the app! This is a description on a page with a blue background.",
               image: Center(
                 child: SvgPicture.asset(
                   "assets/location.svg",
@@ -32,7 +33,8 @@ class IntroPage extends StatelessWidget {
             ),
             PageViewModel(
               title: "Title of blue page",
-              body: "Welcome to the app! This is a description on a page with a blue background.",
+              body:
+                  "Welcome to the app! This is a description on a page with a blue background.",
               image: Center(
                 child: SvgPicture.asset(
                   "assets/searching.svg",
@@ -45,7 +47,8 @@ class IntroPage extends StatelessWidget {
             ),
             PageViewModel(
               title: "Title of blue page",
-              body: "Welcome to the app! This is a description on a page with a blue background.",
+              body:
+                  "Welcome to the app! This is a description on a page with a blue background.",
               image: Center(
                 child: SvgPicture.asset(
                   "assets/camera.svg",
@@ -90,7 +93,8 @@ class IntroPage extends StatelessWidget {
             color: Colors.black,
             activeColor: const Color(0xFF6C63FF),
             spacing: const EdgeInsets.symmetric(horizontal: 3.0),
-            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+            activeShape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
           ),
         ),
       ),
