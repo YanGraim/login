@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class LoginScreen extends GetView<LoginController> {
+import 'login_controller.dart';
+
+class LoginPage extends GetView<LoginController> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
+
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,13 +52,7 @@ class LoginScreen extends GetView<LoginController> {
                   ),
                   const SizedBox(height: 15),
                   Center(
-                    child: ElevatedButton(
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            logar();
-                          }
-                        },
-                        child: const Text("Entrar")),
+                    child: ElevatedButton(onPressed: () {}, child: const Text("Entrar")),
                   )
                 ],
               ),
@@ -63,5 +61,3 @@ class LoginScreen extends GetView<LoginController> {
     );
   }
 }
-
-logar() async {}

@@ -3,41 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'package:login/app/modules/intro/IntroScreen.dart';
+import 'package:login/app/modules/intro_screen/intro_page.dart';
+import 'package:login/app/modules/login_screen/login_page.dart';
 
-final sp = GetStorage();
 void main() async {
   await GetStorage.init();
-  runApp(const GetMaterialApp(
-    home: Intro(),
-  ));
+  final box = GetStorage();
+  box.remove("is_intro");
+  bool sp = box.read("is_intro") ?? false;
+  if (sp) {
+    runApp(GetMaterialApp(debugShowCheckedModeBanner: false, home: LoginPage()));
+  } else {
+    box.write("is_intro", true);
+    runApp(const GetMaterialApp(debugShowCheckedModeBanner: false, home: IntroPage()));
+  }
 }
 
 
+// void main() async {
+//   await GetStorage.init();
+//   runApp(const GetMaterialApp(home: Intro()));
 
-
-
-// class TwinsWMS extends StatelessWidget {
-//   const TwinsWMS({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       routes: {
-//         "/": (context) => Intro(),
-//         // "home": (context) => HomeScreen(),
-//       },
-//     );
-//   }
-// }
-
-
-
-
-// bool? _is_intro;
-//   _is_intro = prefs.read('is_intro');
-//   if ((_is_intro == false) || (_is_intro is empty)) {
-//     IntroScreen;
-//     prefs.write bool('is_intro', true);
-//   } else {
+//

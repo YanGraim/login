@@ -41,6 +41,7 @@ dependencies:
   get_storage: ^2.1.1
   footer: ^0.0.4
   binding: ^1.0.0
+  flutter_svg: ^2.0.4
   
 
 dev_dependencies:
@@ -54,8 +55,8 @@ dev_dependencies:
 flutter_native_splash: 
   image: "assets/splash_light.png"
   color: "#87CEEB"
-  image_dark: "assets/splash_dark.png"
-  color_dark: "#708090"
+  # image_dark: "assets/splash_dark.png"
+  # color_dark: "#708090"
   ios: true
   android: true
 

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-import 'package:login/app/modules/login/LoginScreen.dart';
+import 'package:login/app/modules/login_screen/login_page.dart';
 
-class Intro extends StatelessWidget {
-  const Intro({super.key});
+class IntroPage extends StatelessWidget {
+  const IntroPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,49 +18,50 @@ class Intro extends StatelessWidget {
           scrollPhysics: const BouncingScrollPhysics(),
           pages: [
             PageViewModel(
-              title: "Title of orange text and bold page",
-              body: "This is a description on a page with an orange title and bold, big body.",
-              image: const Center(
-                child: Text("👋", style: TextStyle(fontSize: 100.0)),
-              ),
-              decoration: const PageDecoration(
-                titleTextStyle: TextStyle(color: Colors.black),
-                bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
-              ),
-            ),
-            PageViewModel(
-              title: "Title of custom body page",
-              bodyWidget: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Click on "),
-                  Icon(Icons.edit),
-                  Text(" to edit a post"),
-                ],
-              ),
-              image: const Center(child: Icon(Icons.android)),
-            ),
-            PageViewModel(
-              titleWidget: const Text(
-                "TWINS WMS",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+              title: "Title of blue page",
+              body: "Welcome to the app! This is a description on a page with a blue background.",
+              image: Center(
+                child: SvgPicture.asset(
+                  "assets/location.svg",
+                  height: 250,
                 ),
               ),
-              body: "Escreva mais descrições da pagina. Escreva mais descrições da pagina.",
-              image: Image.asset(
-                "assets/1.png",
-                height: 400,
-                width: 400,
+              decoration: const PageDecoration(
+                pageColor: Colors.white,
+              ),
+            ),
+            PageViewModel(
+              title: "Title of blue page",
+              body: "Welcome to the app! This is a description on a page with a blue background.",
+              image: Center(
+                child: SvgPicture.asset(
+                  "assets/searching.svg",
+                  height: 250,
+                ),
+              ),
+              decoration: const PageDecoration(
+                pageColor: Colors.white,
+              ),
+            ),
+            PageViewModel(
+              title: "Title of blue page",
+              body: "Welcome to the app! This is a description on a page with a blue background.",
+              image: Center(
+                child: SvgPicture.asset(
+                  "assets/camera.svg",
+                  height: 250,
+                ),
+              ),
+              decoration: const PageDecoration(
+                pageColor: Colors.white,
               ),
             ),
           ],
           onDone: () {
-            Get.to(const Login());
+            Get.to(LoginPage());
           },
           onSkip: () {
-            Get.to(const Login());
+            Get.to(LoginPage());
           },
           showSkipButton: true,
           skip: const Text(
@@ -67,26 +69,26 @@ class Intro extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
-              color: Colors.blue,
+              color: Color(0xFF6C63FF),
             ),
           ),
           next: const Icon(
             Icons.arrow_forward,
-            color: Colors.blue,
+            color: Color(0xFF6C63FF),
           ),
           done: const Text(
             "Pronto",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
-              color: Colors.blue,
+              color: Color(0xFF6C63FF),
             ),
           ),
           dotsDecorator: DotsDecorator(
             size: const Size.square(10),
             activeSize: const Size(20.0, 10.0),
             color: Colors.black,
-            activeColor: Colors.blue,
+            activeColor: const Color(0xFF6C63FF),
             spacing: const EdgeInsets.symmetric(horizontal: 3.0),
             activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
           ),
