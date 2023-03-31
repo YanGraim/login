@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../components/button.dart';
 import '../../components/textfield.dart';
+import '../home_screen/home_page.dart';
 import 'login_controller.dart';
 
 class LoginPage extends GetView<LoginController> {
@@ -11,6 +13,11 @@ class LoginPage extends GetView<LoginController> {
   //text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+
+  //metodo para logar
+  void userIn() {
+    Get.to(const HomePage());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +71,65 @@ class LoginPage extends GetView<LoginController> {
                 height: 25,
               ),
               //FORGOT YOUR PASSWORD?
-              Text('Forgot password?',
-              style: TextStyle(color: Colors.grey[600]),)
-              
-              //SIGN IN BUTTON
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Forgot password?',
+                      style: TextStyle(color: Colors.grey[600]),
+                    ),
+                  ],
+                ),
+              ),
 
+              const SizedBox(
+                height: 25,
+              ),
+
+              //SIGN IN BUTTON
+              // ignore: prefer_const_constructors
+              Button(
+                onTap: userIn,
+              ),
+
+              const SizedBox(
+                height: 25,
+              ),
               // NOT A MEMBER? REGISTER NOW
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                        child: Divider(
+                      thickness: 5,
+                      color: Colors.grey[400],
+                    )),
+                    Row(
+                      children: [
+                        Text(
+                          'Ainda não tem uma conta?',
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                        const Text(
+                          'Registrar agora',
+                          style: TextStyle(
+                              color: Colors.blue, 
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    Expanded(
+                        child: Divider(
+                      thickness: 5,
+                      color: Colors.grey[400],
+                    ))
+                  ],
+                ),
+              )
             ],
           ),
         ),

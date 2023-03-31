@@ -6,7 +6,9 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 import 'package:login/app/modules/login_screen/login_page.dart';
 
-class IntroPage extends StatelessWidget {
+import 'Intro_controller.dart';
+
+class IntroPage extends GetView<IntroController> {
   const IntroPage({super.key});
 
   @override
