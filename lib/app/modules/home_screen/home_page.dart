@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login/app/modules/home_screen/home_controller.dart';
 
+import '../../components/drop_down.dart';
+
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Twins WMS',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
@@ -17,6 +20,7 @@ class HomePage extends GetView<HomeController> {
     );
   }
 }
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -44,12 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
     'Sobre',
   ];
 
+  void show() {
+    Get.to(const HomePage());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title), actions: [
+        DropDown(
+          onTap: show,
+        ),
+      ]),
       body: Column(children: [
         Expanded(
           child: GridView.builder(

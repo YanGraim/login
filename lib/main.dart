@@ -20,10 +20,3 @@ void main() async {
         debugShowCheckedModeBanner: false, home: IntroPage()));
   }
 }
-
-
-// void main() async {
-//   await GetStorage.init();
-//   runApp(const GetMaterialApp(home: Intro()));
-
-//
