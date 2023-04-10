@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:login/app/modules/cliente_screen/cliente_page.dart';
 
-// import 'package:get/get.dart';
+import 'package:get/get.dart';
+
+import 'package:login/app/modules/cliente_screen/cliente_page.dart';
 // import 'package:get_storage/get_storage.dart';
 // import 'package:login/app/modules/cliente_screen/cliente_page.dart';
 
@@ -9,7 +10,8 @@ import 'package:login/app/modules/cliente_screen/cliente_page.dart';
 // import 'package:login/app/modules/login_screen/login_page.dart';
 
 void main() async {
-  runApp(const ClientePage());
+  runApp(const GetMaterialApp(debugShowCheckedModeBanner: false, home: ClientePage()));
+}
   // runApp(const ClientePage());
   // await GetStorage.init();
   // final box = GetStorage();
@@ -23,4 +25,4 @@ void main() async {
   //   runApp(const GetMaterialApp(
   //       debugShowCheckedModeBanner: false, home: IntroPage()));
   // }
-}
+

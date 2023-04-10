@@ -1,64 +1,44 @@
+// ignore_for_file: must_be_immutable, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
-const List<String> list = <String>[
-  'Cliente 1',
-  'Cliente 2',
-  'Cliente 3',
-  'Cliente 4'
-];
-
-class ClientePage extends StatelessWidget {
-  const ClientePage({super.key});
+class ClientePage extends StatefulWidget {
+  const ClientePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('DropdownButton Sample'),
-          actions: const [Icon(Icons.search)],
-        ),
-        body: const Center(
-          child: DropdownButtonExample(),
-        ),
-      ),
-    );
-  }
+  _ClientePageState createState() => _ClientePageState();
 }
 
-class DropdownButtonExample extends StatefulWidget {
-  const DropdownButtonExample({super.key});
-
-  @override
-  State<DropdownButton> createState() => _DropdownButtonState();
-}
-
-class _DropdownButtonState extends State<DropdownButton> {
-  String dropdownValue = list.first;
-
+class _ClientePageState extends State<ClientePage> {
+  List<String> items = <String>[
+    "Cliente 1",
+    "Cliente 2",
+    "Cliente 3",
+    "Cliente 4",
+  ];
+  String dropdownValue = "Cliente 1";
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
-      value: dropdownValue,
-      icon: const Icon(Icons.arrow_downward),
-      elevation: 16,
-      style: const TextStyle(color: Colors.deepPurple),
-      underline: Container(
-        height: 2,
-        color: Colors.deepPurpleAccent,
-      ),
-      onChanged: (String? value) {
-        // This is called when the user selects an item.
-        setState(() {
-          dropdownValue = value!;
-        });
-      },
-      items: list.map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      body: Center(
+          child: DropdownButton<String>(
+              iconSize: 24,
+              elevation: 16,
+              onChanged: (String? newValue) {
+                setState(() {
+                  dropdownValue = newValue!;
+                });
+              },
+              value: dropdownValue,
+              items: items.map<DropdownMenuItem<String>>(
+                (String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                },
+              ).toList())),
     );
   }
 }
