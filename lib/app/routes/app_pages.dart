@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 
+import 'package:login/app/modules/cadastro_screen/cadastro_binding.dart';
 import 'package:login/app/modules/cliente_screen/cliente_binding.dart';
 import 'package:login/app/modules/cliente_screen/cliente_page.dart';
 
+import '../modules/cadastro_screen/cadastro_page.dart';
 import '../modules/home_screen/home_binding.dart';
 import '../modules/home_screen/home_page.dart';
 import '../modules/intro_screen/intro_binding.dart';
@@ -28,6 +30,7 @@ class AppPages {
       page: () => const HomePage(),
       binding: HomeBinding(),
     ),
-    GetPage(name: Routes.cliente, page: () => const ClientePage(), binding: ClienteBinding())
+    GetPage(name: Routes.cliente, page: () => ClientePage(), binding: ClienteBinding()),
+    GetPage(name: Routes.cadastro, page: () => const CadastroPage(), binding: CadastroBinding())
   ];
 }

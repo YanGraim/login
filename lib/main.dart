@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:login/app/modules/cliente_screen/cliente_page.dart';
+import 'app/modules/cadastro_screen/cadastro_page.dart';
 // import 'package:get_storage/get_storage.dart';
 // import 'package:login/app/modules/cliente_screen/cliente_page.dart';
 
@@ -10,7 +10,11 @@ import 'package:login/app/modules/cliente_screen/cliente_page.dart';
 // import 'package:login/app/modules/login_screen/login_page.dart';
 
 void main() async {
-  runApp(const GetMaterialApp(debugShowCheckedModeBanner: false, home: ClientePage()));
+  runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: const CadastroPage(),
+    theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFEFEFEF)),
+  ));
 }
   // runApp(const ClientePage());
   // await GetStorage.init();
